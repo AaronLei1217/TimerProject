@@ -1,0 +1,159 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    color: #333;
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #333; // 深色模式時的背景色
+    color: #f5deb3; // 米色
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 20px; // 圓角
+    font-size: 1rem;
+
+    #sun-icon {
+        display: none; // 深色模式時隱藏太陽圖標
+    }
+
+    &:hover {
+        background-color: darken(#333, 10%);
+    }
+}
+
+body.dark-theme {
+    background-color: #333;
+    color: #f5deb3; // 米色
+
+    #theme-toggle {
+        background-color: #f5deb3; // 米色
+        color: #333;
+
+        #sun-icon {
+            display: inline; // 亮色模式時顯示太陽圖標
+        }
+
+        #moon-icon {
+            display: none; // 亮色模式時隱藏月亮圖標
+        }
+
+        &:hover {
+            background-color: darken(#f5deb3, 10%);
+        }
+    }
+}
+
+#date-time-container {
+    text-align: center;
+    padding: 20px;
+}
+
+#date {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#time {
+    font-size: 4rem; // 將字體大小增加到4.0rem
+    width: 100%;
+    text-align: center;
+}
+
+#menu {
+    font-family: 'Arial', sans-serif;
+    position: absolute;
+    left: -300px; // 預設隱藏
+    top: 0;
+    width: 200px;
+    height: 100%;
+    overflow: hidden;
+    background-color: #f0f0f0; // 淺灰色背景
+    transition: left 0.5s ease; // 平滑過渡效果
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); // 添加陰影
+
+    &.menu-open {
+        left: 0; // 菜單打開時的位置
+    }
+
+    .todo-item {
+        padding: 10px;
+        margin:2px;
+        border-bottom: 1px solid #ccc; // 淺灰色邊框
+        border-radius: 5px; // 添加圓角，使其看起來更柔和
+        border: 1px solid #ccc; // 添加邊框
+        font-size: 1rem;
+        color: #333;
+        transition: background-color 0.3s ease;
+        position: relative; // 設置相對定位，以便可以使用絕對定位的子元素
+        
+        &:hover {
+            background-color: #e0e0e0; // 滑鼠懸停時的背景色
+        }
+
+        .priority-dot {
+            position: absolute; // 使用絕對定位
+            right: 10px; // 距離右邊10px
+            top: 50%; // 垂直居中
+            transform: translateY(-50%); // 垂直居中的微調
+            display: inline-block; // 使其成為內聯塊
+            width: 10px; // 圓點的寬度
+            height: 10px; // 圓點的高度
+            border-radius: 50%; // 使其成為圓形
+            margin-left: 10px; // 左邊距
+        }
+    
+        &.low .priority-dot {
+            background-color: #4caf50; // 低優先度為綠色
+        }
+    
+        &.medium .priority-dot {
+            background-color: #ffeb3b; // 中等優先度為黃色
+        }
+    
+        &.high .priority-dot {
+            background-color: #f44336; // 高優先度為紅色
+        }
+    }
+}
+
+body.dark-theme #menu {
+    background-color: #333;
+    color: #f5deb3; // 米色
+
+    .todo-item {
+        color: #f5deb3; // 米色，使文字在深色背景下可見
+        border-bottom: 1px solid #555; // 深色主題下的邊框顏色
+        border: 1px solid #555; // 深色主題下的邊框顏色
+
+
+        &.low .priority-dot {
+            background-color: #4caf50; // 低飽和度的綠色
+        }
+    
+        &.medium .priority-dot {
+            background-color: #ffeb3b; // 低飽和度的黃色
+        }
+    
+        &.high .priority-dot {
+            background-color: #f44336; // 低飽和度的紅色
+        }
+
+        &:hover {
+            background-color: #444; // 深色主題下，滑鼠懸停時的背景色
+        }
+    }
+}
