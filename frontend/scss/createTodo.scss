@@ -1,0 +1,47 @@
+body {
+    background-color: #333;
+    color: #f5deb3;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#create-todo-container {
+    background-color: #444; // 較深的背景顏色
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 500px; // 增加寬度
+    text-align: center;
+
+    label, input, select, button {
+        margin: 10px 0;
+        display: block;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    input, select {
+        padding: 10px;
+        border: 1px solid #f5deb3;
+        background-color: #f5deb3;
+        color: #333;
+        box-sizing: border-box; // 確保邊框和內間距包括在元素的總寬度和高度中
+    }
+
+    button {
+        padding: 10px;
+        background-color: #f5deb3;
+        color: #333;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 1rem;
+
+        &:hover {
+            background-color: darken(#f5deb3, 10%);
+        }
+    }
+}

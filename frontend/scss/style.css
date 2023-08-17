@@ -137,4 +137,37 @@ body.dark-theme #menu .todo-item.high .priority-dot {
 }
 body.dark-theme #menu .todo-item:hover {
   background-color: #444;
+}
+
+.add-todo-button {
+  padding: 10px;
+  text-align: center;
+  background-color: #333;
+  color: #f5deb3;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+.add-todo-button a {
+  text-decoration: none;
+  color: #f5deb3;
+}
+.add-todo-button a:hover {
+  color: #efca86;
+}
+.add-todo-button:hover {
+  background-color: #1a1a1a;
+}
+
+body.dark-theme .add-todo-button {
+  background-color: #f5deb3;
+  color: #333;
+}
+body.dark-theme .add-todo-button a {
+  color: #333;
+}
+body.dark-theme .add-todo-button a:hover {
+  color: #1a1a1a;
+}
+body.dark-theme .add-todo-button:hover {
+  background-color: #efca86;
 }/*# sourceMappingURL=style.css.map */

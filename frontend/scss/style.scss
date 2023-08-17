@@ -88,7 +88,7 @@ body.dark-theme {
     &.menu-open {
         left: 0; // 菜單打開時的位置
     }
-
+    
     .todo-item {
         padding: 10px;
         margin:2px;
@@ -157,3 +157,43 @@ body.dark-theme #menu {
         }
     }
 }
+
+.add-todo-button {
+    padding: 10px;
+    text-align: center;
+    background-color: #333;
+    color: #f5deb3;
+    border-radius: 5px;
+    margin: 10px 0;
+
+    a {
+        text-decoration: none;
+        color: #f5deb3;
+
+        &:hover {
+            color: darken(#f5deb3, 10%);
+        }
+    }
+
+    &:hover {
+        background-color: darken(#333, 10%);
+    }
+}
+
+body.dark-theme .add-todo-button {
+    background-color: #f5deb3;
+    color: #333;
+
+    a {
+        color: #333;
+
+        &:hover {
+            color: darken(#333, 10%);
+        }
+    }
+
+    &:hover {
+        background-color: darken(#f5deb3, 10%);
+    }
+}
+
